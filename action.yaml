@@ -1,0 +1,4 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: action
+name: 'CD test'
+description: 'Do CD things
