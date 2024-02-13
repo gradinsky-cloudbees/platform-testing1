@@ -2,3 +2,27 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
 name: 'CD test'
 description: 'Do CD things
+
+inputs:
+  cd-url:
+    description: 'Black Duck URL'
+    required: true
+    default: 'https://gradinsky-cd-ps.beescloud.com'
+  cd-user:
+    description: 'test user for CD'
+    required: true
+    default: ''
+  cd-password:
+    description: 'test pass for CD'
+    required: true
+    default: ''
+    
+runs:
+  using: composite
+  steps:
+    - id: cd-tools
+      kind: scan
+      uses: docker://cloudbees/cbflow-tools:2023.12.0.171596_3.2.64_20231207
+      shell: sh
+      run: |
+        ectool login --server {{ inputs.cd-url }} admin {{ secrets.cd-password }}
