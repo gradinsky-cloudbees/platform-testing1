@@ -16,16 +16,7 @@ jobs:
     - id: cd-tools
         uses: docker://cloudbees/cbflow-tools:2023.12.0.171596_3.2.64_20231207
         with:
-            cd-url: https://gradinsky-cd-ps.beescloud.com
+            cd-url: https://cd-url.com
             cd-user: admin
             cd-password: changeme
-    
-runs:
-  using: composite
-  steps:
-    - id: cd-tools
-      kind: scan
-      uses: docker://cloudbees/cbflow-tools:2023.12.0.171596_3.2.64_20231207
-      shell: sh
-      run: |
-        ectool login --server {{ inputs.cd-url }} admin {{ secrets.cd-password }}
+            
