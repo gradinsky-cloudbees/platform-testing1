@@ -5,7 +5,7 @@ description: 'Do CD things
 
 inputs:
   cd-url:
-    description: 'Black Duck URL'
+    description: 'CD URL'
     required: true
     default: 'https://gradinsky-cd-ps.beescloud.com'
   cd-user:
