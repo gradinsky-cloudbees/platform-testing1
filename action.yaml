@@ -25,4 +25,4 @@ runs:
       uses: docker://cloudbees/cbflow-tools:2023.12.0.171596_3.2.64_20231207
       shell: sh
       run: |
-        echo 'ectool login --server ${{ inputs.cd-url }} ${{ inputs.cd-user }} ${{ inputs.cd-password }}'
+        ectool login --server ${{ inputs.cd-url }} ${{ inputs.cd-user }} ${{ inputs.cd-password }}
