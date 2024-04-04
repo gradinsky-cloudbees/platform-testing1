@@ -1,4 +1,4 @@
-# cd-tools 1
+# cd-tools
 ## Usage
 
 apiVersion: automation.cloudbees.io/v1alpha1
